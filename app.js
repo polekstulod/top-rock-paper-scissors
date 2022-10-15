@@ -9,33 +9,27 @@ function playRound(playerSelection, computerSelection) {
   playerSelection = playerSelection.toLowerCase()
   computerSelection = computerSelection.toLowerCase()
 
-  if (playerSelection === computerSelection) console.log('Tie game 😐')
+  if (playerSelection === computerSelection) return 'Tie game 😐'
   else if (playerSelection === 'rock') {
     if (computerSelection === 'paper') {
-      console.log('You Lose 😔, Paper beats Rock')
-      return 'computer'
+      return 'You Lose 😔, Paper beats Rock'
     } else if (computerSelection === 'scissors') {
-      console.log('You Win 😁, Rock beats Scissors')
-      return 'player'
+      return 'You Win 😁, Rock beats Scissors'
     }
   } else if (playerSelection === 'paper') {
     if (computerSelection === 'rock') {
-      console.log('You Win 😁, Paper beats Rock')
-      return 'player'
+      return 'You Win 😁, Paper beats Rock'
     } else if (computerSelection === 'scissors') {
-      console.log('You Lose 😔, Scissors beats Paper')
-      return 'computer'
+      return 'You Lose 😔, Scissors beats Paper'
     }
   } else if (playerSelection === 'scissors') {
     if (computerSelection === 'paper') {
-      console.log('You Win 😁, Scissors beats Paper')
-      return 'player'
+      return 'You Win 😁, Scissors beats Paper'
     } else if (computerSelection === 'rock') {
-      console.log('You Lose 😔, Rock beats Scissors')
-      return 'computer'
+      return 'You Lose 😔, Rock beats Scissors'
     }
   } else {
-    console.log('Invalid input ❌')
+    return 'Invalid input ❌'
   }
 }
 
@@ -65,15 +59,19 @@ game()
 const rockBtn = document.querySelector('#rock-btn')
 const paperBtn = document.querySelector('#paper-btn')
 const scissorsBtn = document.querySelector('#scissors-btn')
+const result = document.querySelector('#result')
 
 rockBtn.addEventListener('click', () => {
-  alert(`${playRound('Rock', getComputerChoice())} wins`)
+  result.textContent = ''
+  result.textContent = playRound('Rock', getComputerChoice())
 })
 
 paperBtn.addEventListener('click', () => {
-  alert(`${playRound('Rock', getComputerChoice())} wins`)
+  result.textContent = ''
+  result.textContent = playRound('Paper', getComputerChoice())
 })
 
 scissorsBtn.addEventListener('click', () => {
-  alert(`${playRound('Rock', getComputerChoice())} wins`)
+  result.textContent = ''
+  result.textContent = playRound('Scissors', getComputerChoice())
 })
