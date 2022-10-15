@@ -33,29 +33,6 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-/* function game() {
-  let playerScore = 0
-  let computerScore = 0
-
-  for (let i = 0; i < 5; i++) {
-    const playerSelection = prompt()
-    const computerSelection = getComputerChoice()
-
-    const winner = playRound(playerSelection, computerSelection)
-
-    if (winner === 'player') playerScore++
-    else if (winner === 'computer') computerScore++
-
-    console.log(`You: ${playerScore}\nComputer: ${computerScore}`)
-  }
-
-  if (playerScore === computerScore) console.log('Game Tied 😑')
-  else console.log(playerScore > computerScore ? 'You Win this game 🥳' : 'You Lose this game 😭')
-}
-
-game()
- */
-
 function updateScore(outputResult) {
   if (outputResult === 'W') playerScore++
   else if (outputResult === 'L') computerScore++
